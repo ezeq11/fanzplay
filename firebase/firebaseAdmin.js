@@ -1,19 +1,18 @@
 import * as firebaseAdmin from 'firebase-admin';
 
-import { private_key, PUBLIC_FIREBASE_PROJECT_ID, PUBLIC_FIREBASE_PROJECT_ID } from "@envLocal";
+import {
+  PRIVATE_FIREBASE_KEY_FILE,
+  PUBLIC_FIREBASE_DATABASE_URL
+} from "@env";
 
-
+// reference obtained from: Firebase -> fanzplay -> Project settings -> Service accounts
+let serviceAccount = require(PRIVATE_FIREBASE_KEY_FILE);
 
 if (firebaseAdmin.apps.length == 0) {
-    firebaseAdmin.initializeApp({
-        credential: firebaseAdmin.credential.cert({
-            privateKey: private_key,
-            clientEmail: client_email,
-            projectId: PUBLIC_FIREBASE_PROJECT_ID,
-        }),
-        databaseURL: 'https://fanzplay-95bfa-default-rtdb.firebaseio.com/',
-    });
+  firebaseAdmin.initializeApp({
+    credential: firebaseAdmin.credential.cert(serviceAccount),
+    databaseURL: PUBLIC_FIREBASE_DATABASE_URL
+  });
 }
-console.log(firebaseAdmin)
 
 export default { firebaseAdmin };
