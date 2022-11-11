@@ -3,7 +3,8 @@ import * as React from "react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth, db } from "../firebase/firebaseClient";
 import { TextField, Button, Text, Colors } from "react-native-ui-lib";
-import {KeyboardAvoidingView,TouchableWithoutFeedback, Keyboard,Modal, StyleSheet, View,Picker, ScrollView,} from "react-native";
+import { KeyboardAvoidingView, TouchableWithoutFeedback, Keyboard,Modal, StyleSheet, View, ScrollView } from "react-native";
+import { Picker } from "@react-native-picker/picker";
 
 
 export default function Signup() {
