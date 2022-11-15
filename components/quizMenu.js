@@ -106,6 +106,7 @@ export default function QuizMenu({ navigation }) {
               Enter Code:
             </Text>
             <TextField
+              migrate
               underlineColor="transparent"
               text70
               style={{

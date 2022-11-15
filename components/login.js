@@ -39,12 +39,14 @@ export default function Login({ navigation }) {
             behavior={Platform.OS === "ios" ? "padding" : "height"}
           >
             <TextField
+            migrate
             underlineColor = "transparent"
             editable={false}
             red50
             value={errorm}>
             </TextField>
             <TextField
+              migrate
               value={email}
               white50
               placeholder={"Email"}
@@ -53,6 +55,7 @@ export default function Login({ navigation }) {
               style={styles.input}
             />
             <TextField
+              migrate
               value={password}
               secureTextEntry={true}
               type="password"

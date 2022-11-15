@@ -69,6 +69,7 @@ export default function AddQuestion() {
       </Modal>
 
       <TextField
+        migrate
         color="white"
         value={question}
         style={styles.input}
@@ -78,6 +79,7 @@ export default function AddQuestion() {
         onChangeText={(question) => setQuestion(question)}
       />
       <TextField
+        migrate
         color="white"
         style={styles.input}
         placeholder={"Correct Answer"}
@@ -86,6 +88,7 @@ export default function AddQuestion() {
         onChangeText={(correctanswer) => setCorrectAnswer(correctanswer)}
       />
       <TextField
+        migrate
         color="white"
         value={incorrectanswer1}
         style={styles.input}
@@ -94,6 +97,7 @@ export default function AddQuestion() {
         onChangeText={(incorrectanswer1) => setIncorrectAnswer1(incorrectanswer1)}
       />
       <TextField
+        migrate
         color="white"
         value={incorrectanswer2}
         style={styles.input}
@@ -102,6 +106,7 @@ export default function AddQuestion() {
         onChangeText={(incorrectanswer2) => setIncorrectAnswer2(incorrectanswer2)}
       />
       <TextField
+        migrate
         color="white"
         value={incorrectanswer3}
         style={styles.input}
@@ -110,6 +115,7 @@ export default function AddQuestion() {
         onChangeText={(incorrectanswer3) => setIncorrectAnswer3(incorrectanswer3)}
       />
       <TextField
+        migrate
         color="white"
         value={incorrectanswer4}
         style={styles.input}

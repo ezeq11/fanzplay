@@ -22,9 +22,7 @@ export default function Signup() {
 
 
   async function signupWithEmail() {
-
-    auth()
-      .createUserWithEmailAndPassword(email, password)
+    createUserWithEmailAndPassword(auth, email, password)
       .then((cred) => {
         cred.user.sendEmailVerification();
         db.collection("users")
@@ -93,12 +91,14 @@ export default function Signup() {
             </View>
           </Modal>
           <TextField
+            migrate
             underlineColor = "transparent"
             editable={false}
             red50
             value={errorm}>
           </TextField>
           <TextField
+            migrate
             value={email}
             style={styles.input}
             enableErrors
@@ -108,6 +108,7 @@ export default function Signup() {
             textContentType="emailAddress"
           />
           <TextField
+            migrate
             style={styles.input}
             placeholder={"Password"}
             floatingPlaceholder
@@ -115,6 +116,7 @@ export default function Signup() {
             onChangeText={(password) => setPassword(password)}
           />
           <TextField
+            migrate
             value={firstName}
             style={styles.input}
             placeholder={"First Name"}
@@ -122,6 +124,7 @@ export default function Signup() {
             onChangeText={(firstName) => setFirstName(firstName)}
           />
           <TextField
+            migrate
             value={lastName}
             style={styles.input}
             placeholder={"Last Name"}
@@ -129,6 +132,7 @@ export default function Signup() {
             onChangeText={(lastName) => setLastName(lastName)}
           />
           <TextField
+            migrate
             value={username}
             style={styles.input}
             placeholder={"Username"}
@@ -136,6 +140,7 @@ export default function Signup() {
             onChangeText={(username) => setUsername(username)}
           />
           <TextField
+            migrate
             value={number}
             style={styles.input}
             placeholder={"Phone Number"}
@@ -158,6 +163,7 @@ export default function Signup() {
           </Picker>
 
           <TextField
+            migrate
             value={zip}
             style={styles.input}
             placeholder={"Zip Code"}
@@ -166,6 +172,7 @@ export default function Signup() {
             keyboardType="numeric"
           />
           <TextField
+            migrate
             value={city}
             style={styles.input}
             placeholder={"City"}

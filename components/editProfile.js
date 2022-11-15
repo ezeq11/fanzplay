@@ -1,4 +1,5 @@
-import { StyleSheet, View, TextInput, Picker } from "react-native";
+import { StyleSheet, View, TextInput } from "react-native";
+import { Picker } from "@react-native-picker/picker";
 import { useState, useContext } from "react";
 import * as React from "react";
 import {getAuth,reauthenticateWithCredential,updateEmail,updatePassword} from "firebase/auth";
@@ -32,21 +33,25 @@ export default function Edit() {
 
 
   //this use effect hook runs on component render and loads the users information into local state variables
-  React.useEffect(async () => {
-    const docSnap = await getDoc(docRef);
+  React.useEffect(() => {
+    async function loadUserInfo(){
+      const docSnap = await getDoc(docRef);
 
-    if (docSnap.exists()) {
-      setEmail(user.currentUser.email);
-      setFirstName(docSnap.data().firstName);
-      setLastName(docSnap.data().lastName);
-      setAge(docSnap.data().age);
-      setZip(docSnap.data().zipCode);
-      setCity(docSnap.data().city);
-      setNumber(docSnap.data().number);
-      setUsername(docSnap.data().username);
-    } else {
-      console.log("No such document!");
+      if (docSnap.exists()) {
+        setEmail(user.currentUser.email);
+        setFirstName(docSnap.data().firstName);
+        setLastName(docSnap.data().lastName);
+        setAge(docSnap.data().age);
+        setZip(docSnap.data().zipCode);
+        setCity(docSnap.data().city);
+        setNumber(docSnap.data().number);
+        setUsername(docSnap.data().username);
+      } else {
+        console.log("No such document!");
+      }
     }
+    
+    loadUserInfo();
   }, []);
 
   //this function updates the current users information with the newly changed state variable information
@@ -133,6 +138,7 @@ export default function Edit() {
                   Please confirm email and password to update information!
                 </Text>
                 <TextField
+                  migrate
                   text100
                   color={"#FFFFFF"}
                   value={emailCurrent}
@@ -142,6 +148,7 @@ export default function Edit() {
                   onChangeText={(emailCurrent) => setEmailCurrent(emailCurrent)}
                 />
                 <TextField
+                  migrate
                   text100
                   color={"#FFFFFF"}
                   secureTextEntry={true}
@@ -185,6 +192,7 @@ export default function Edit() {
           </Modal>
 
           <TextField
+            migrate
             color="white"
             text100
             value={email}
@@ -196,6 +204,7 @@ export default function Edit() {
             textContentType={"emailAddress"}
           />
           <TextField
+            migrate
             color="white"
             text100
             value={password}
@@ -210,6 +219,7 @@ export default function Edit() {
             onChangeText={(password) => setPassword(password)}
           />
           <TextField
+            migrate
             color="white"
             text100
             value={firstName}
@@ -219,6 +229,7 @@ export default function Edit() {
             onChangeText={(firstName) => setFirstName(firstName)}
           />
           <TextField
+            migrate
             color="white"
             text100
             value={lastName}
@@ -228,6 +239,7 @@ export default function Edit() {
             onChangeText={(lastName) => setLastName(lastName)}
           />
           <TextField
+            migrate
             color="white"
             text100
             value={username}
@@ -237,6 +249,7 @@ export default function Edit() {
             onChangeText={(username) => setUsername(username)}
           />
           <TextField
+            migrate
             color="white"
             text100
             value={number}
@@ -263,6 +276,7 @@ export default function Edit() {
             <Picker.Item color="white" label="65+" value="65+" />
           </Picker>
           <TextField
+            migrate
             color="white"
             text100
             value={zip}
@@ -273,6 +287,7 @@ export default function Edit() {
             keyboardType="numeric"
           />
           <TextField
+            migrate
             color="white"
             text100
             value={city}

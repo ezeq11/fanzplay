@@ -44,9 +44,9 @@ export default function GameList() {
         drawer =
             (<View>
                 <View style={{ padding: 10 }}>
-                    <TextField color="white" value={homeTeam} placeholder={"Home Team"} onChangeText={(homeTeam) => setHomeTeam(homeTeam)}></TextField>
-                    <TextField color="white" value={awayTeam} placeholder={"Away Team"} onChangeText={(awayTeam) => setAwayTeam(awayTeam)}></TextField>
-                    <TextField color="white" value={joinCode} placeholder={"Code to Join"} onChangeText={(joinCode) => setJoinCode(joinCode)}
+                    <TextField migrate color="white" value={homeTeam} placeholder={"Home Team"} onChangeText={(homeTeam) => setHomeTeam(homeTeam)}></TextField>
+                    <TextField migrate color="white" value={awayTeam} placeholder={"Away Team"} onChangeText={(awayTeam) => setAwayTeam(awayTeam)}></TextField>
+                    <TextField migrate color="white" value={joinCode} placeholder={"Code to Join"} onChangeText={(joinCode) => setJoinCode(joinCode)}
 
                     ></TextField>
                 </View>

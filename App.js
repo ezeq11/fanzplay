@@ -50,7 +50,7 @@ function Welcome({ navigation, route }) {
         if (docSnap.exists()) {
           userContext.setIsAdmin(docSnap.data().isAdmin);  
         } else {
-          console.log("No such document!");
+          console.log(uid + ": No such document!");
         }
       });
       
@@ -178,17 +178,17 @@ function App() {
             }}
             component={HomeScreen}
           />
-          <Stack.Screen options={{headerStyle: {backgroundColor: '#2e2f33'}, headerTintColor: '#fff'}} name ="Rewards" component={Rewards} />
-          <Stack.Screen options={{headerStyle: {backgroundColor: '#2e2f33'}, headerTintColor: '#fff'}}  name="Login" component={Login} />
-          <Stack.Screen options={{headerStyle: {backgroundColor: '#2e2f33'}, headerTintColor: '#fff'}}  name="Signup" component={Signup} />
-          <Stack.Screen options={{headerStyle: {backgroundColor: '#2e2f33'}, headerTintColor: '#fff'}}  name="Edit Profile" component={Edit} />
-          <Stack.Screen options={{headerStyle: {backgroundColor: '#2e2f33'}, headerTintColor: '#fff'}}  name="Quiz" component={QuizScreen} />
+          <Stack.Screen options={{headerStyle: {backgroundColor: '#2e2f33'}, headerTintColor: '#fff'}} name="Rewards" component={Rewards} />
+          <Stack.Screen options={{headerStyle: {backgroundColor: '#2e2f33'}, headerTintColor: '#fff'}} name="Login" component={Login} />
+          <Stack.Screen options={{headerStyle: {backgroundColor: '#2e2f33'}, headerTintColor: '#fff'}} name="Signup" component={Signup} />
+          <Stack.Screen options={{headerStyle: {backgroundColor: '#2e2f33'}, headerTintColor: '#fff'}} name="Edit Profile" component={Edit} />
+          <Stack.Screen options={{headerStyle: {backgroundColor: '#2e2f33'}, headerTintColor: '#fff'}} name="Quiz" component={QuizScreen} />
           <Stack.Screen options={{headerStyle: {backgroundColor: '#2e2f33'}, headerTintColor: '#fff'}} name="Games List" component={GameList} />
           <Stack.Screen options={{headerStyle: {backgroundColor: '#2e2f33'}, headerTintColor: '#fff'}} name="Quiz Menu" component={QuizMenu} />
           <Stack.Screen options={{headerStyle: {backgroundColor: '#2e2f33'}, headerTintColor: '#fff'}} name="Add Games" component={AddGames} />
           <Stack.Screen options={{headerStyle: {backgroundColor: '#2e2f33'}, headerTintColor: '#fff'}} name="Add questions" component={AddQuestion} />
-          <Stack.Screen options={{headerStyle: {backgroundColor: '#2e2f33'}, headerTintColor: '#fff'}} name = "Add Rewards" component={AddReward} />
-          <Stack.Screen options={{headerStyle: {backgroundColor: '#2e2f33'}, headerTintColor: '#fff'}} name = "Profile" component={Profile} />
+          <Stack.Screen options={{headerStyle: {backgroundColor: '#2e2f33'}, headerTintColor: '#fff'}} name="Add Rewards" component={AddReward} />
+          <Stack.Screen options={{headerStyle: {backgroundColor: '#2e2f33'}, headerTintColor: '#fff'}} name="Profile" component={Profile} />
 
 
         </Stack.Navigator>

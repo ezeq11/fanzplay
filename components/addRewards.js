@@ -59,7 +59,8 @@ export default function AddReward() {
       </Modal>
 
       <TextField
-       color="white"
+        migrate
+        color="white"
         value={name}
         style={styles.input}
         placeholder={"Reward Name"}
@@ -67,15 +68,17 @@ export default function AddReward() {
         onChangeText={(name) => setName(name)}
       />
       <TextField
-       color="white"
-          value={link}
+        migrate
+        color="white"
+        value={link}
         style={styles.input}
         placeholder={"Reward Link"}
         floatingPlaceholder
         onChangeText={(link) => setLink(link)}
       />
       <TextField
-       color="white"
+        migrate
+        color="white"
         value={number}
         style={styles.input}
         keyboardType='numeric'
