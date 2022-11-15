@@ -25,13 +25,18 @@ export default function Rewards({ navigation }) {
   const [rewardName, setRewardName] = useState("");
   const rewardImage = require("../assets/reward.png");
   const qr = require("../assets/QR.png");
-  React.useEffect(async () => {
-    let tempArray = [];
-    const querySnapshot = await getDocs(collection(db, "rewards"));
-    querySnapshot.forEach((doc) => {
-      tempArray.push(doc.data());
-    });
-    setRewards(tempArray);
+  
+  React.useEffect(() => {
+    async function loadRewards(){
+      let tempArray = [];
+      const querySnapshot = await getDocs(collection(db, "rewards"));
+      querySnapshot.forEach((doc) => {
+        tempArray.push(doc.data());
+      });
+      setRewards(tempArray);
+    }
+    
+    loadRewards();
   }, []);
 
   console.log(rewards);

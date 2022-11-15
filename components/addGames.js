@@ -27,18 +27,24 @@ export default function AddGames() {
 
 
 
-React.useEffect(async () => {
-    questionArr = [];
-   
-// get the list of questions from the firestore database and add them to the arr state variable
-const querySnapshot = await getDocs(collection(db, "questions"));
-querySnapshot.forEach((doc) => {
-  // doc.data() is never undefined for query doc snapshots
-  questionArr.push(doc.data());
-});
-setArr(questionArr)
+React.useEffect(() => {
+    async function loadQuestions(){
+        questionArr = [];
+        
+        // get the list of questions from the firestore database and add them to the arr state variable
+        const querySnapshot = await getDocs(collection(db, "questions"));
+        
+        querySnapshot.forEach((doc) => {
+            // doc.data() is never undefined for query doc snapshots
+            questionArr.push(doc.data());
+        });
 
-    }, [])
+        setArr(questionArr);
+    }
+
+    loadQuestions();
+
+}, [])
 
 
 
