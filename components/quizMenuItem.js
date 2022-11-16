@@ -121,7 +121,7 @@ export default function QuizMenuItem(props) {
                 borderRadius={0}
                 label={"Go to Quiz"}
                 style={{
-                    justifyContent: "center", alignItems: "center", borderWidth: "1",
+                    justifyContent: "center", alignItems: "center", borderWidth: 1,
                     borderStyle: "solid",
                     margin: 0,
                     borderColor: Colors.rgba('#000000', 0.1)
