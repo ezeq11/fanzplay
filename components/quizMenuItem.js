@@ -134,7 +134,6 @@ export default function QuizMenuItem(props) {
                 }
 
                 }
-                useNative
             >
                 <Card.Section
                     backgroundColor={Colors.rgba('#cddc29', 1)}
